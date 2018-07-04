@@ -1,0 +1,32 @@
+---
+- name: restart mariadb
+  service:
+    name: mariadb
+    enabled: yes
+    state: restarted
+  become: true
+
+- name: restart httpd
+  service:
+    name: httpd
+    enabled: yes
+    state: restarted
+  become: true
+
+- name: restart labcontroller services
+  service:
+    name: "{{ item }}"
+    enabled: yes
+    state: restarted
+  become: true
+  with_items:
+    - beaker-proxy
+    - beaker-watchdog
+    - beaker-provision
+
+- name: restart dnsmasq
+  service:
+    name: dnsmasq
+    enabled: yes
+    state: restarted
+  become: true

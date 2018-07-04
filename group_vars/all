@@ -1,0 +1,31 @@
+---
+admin_login: admin
+admin_password: admin
+admin_email: "root@localhost.localdomain"
+admin_fullname: Admin Nimda
+
+db:
+  name: beaker
+  user: beaker
+  password: "{{ lookup('password', 'credentials/mysqlpassword/beaker length=15') }}"
+  root_pass: "{{ lookup('password', 'credentials/mysqlpassword/root length=21') }}"
+
+lab:
+  fqdn: "{{ ansible_nodename }}"
+  listen_address: "{{ ansible_default_ipv4.address }}"
+  dhcp_start: <dhcp pool allocation start>
+  dhcp_end: <dhcp pool allocation end>
+  dhcp_netmask: <netmask XXX.YYY.ZZZ.AAA>
+  router: <address of the default router>
+  systems:
+    - fqdn: <fqdn of the system>
+      mac_address: <mac address of the system XX:XX:XX:XX:XX:XX
+      ip_address: <ip address of the system, must be in dhcp pool allocation>
+      arch: x86_64
+      power_address: <address / fqdn of the power interface>
+      power_user: <username for use in the power script>
+      power_password: <password for use in the power script>
+      power_type: ipmitool_lanplus
+    #- … more systems
+
+# vim: set ft=yaml:

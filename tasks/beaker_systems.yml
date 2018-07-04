@@ -1,0 +1,27 @@
+---
+- name: Query the systems list
+  shell: bkr system-list
+  register: systems
+  changed_when: false
+  become: true
+  ignore_errors: true
+  tags:
+    - systems
+
+- name: Create the systems
+  command: >
+    bkr system-create
+    --lab-controller={{ lab.fqdn }}
+    --arch={{ item.arch }}
+    --power-type={{ item.power_type }}
+    --power-address={{ item.power_address }}
+    --power-user={{ item.power_user }}
+    --power-password={{ item.power_password }}
+    {{ item['fqdn'] }}
+  when: "item['fqdn'] not in systems.stdout_lines"
+  become: true
+  loop: '{{ lab.systems }}'
+  tags:
+    - systems
+
+## FIXME: set kernel options to: "console=tty0 console=ttyS0,115200n8"

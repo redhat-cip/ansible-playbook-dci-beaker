@@ -1,0 +1,59 @@
+---
+- name: Install packages
+  package:
+    name:
+      - mariadb-server
+      - MySQL-python
+  become: true
+  notify:
+    - restart mariadb
+
+- name: Enable unicode support in MariaDB
+  ini_file:
+    path: /etc/my.cnf
+    section: mysqld
+    option: character-set-server
+    value: utf8
+  become: true
+  notify:
+    - restart mariadb
+
+- name: Enable services
+  service:
+    name: mariadb
+    enabled: yes
+    state: started
+  become: true
+
+- name: Change the mariadb/root password
+  mysql_user:
+    name: root
+    host: '{{ item }}'
+    password: '{{ db.root_pass }}'
+  with_items: ['localhost']
+  become: true
+
+- name: Create the /root/.my.cnf file
+  ini_file:
+    path: /root/.my.cnf
+    section: client
+    option: '{{ item.var }}'
+    value: '{{ item.val }}'
+    mode: 0600
+  with_items:
+    - { 'var': 'user', 'val': 'root' }
+    - { 'var': 'password', 'val': '{{ db.root_pass }}' }
+  become: true
+
+- name: Create the database
+  mysql_db:
+    name: '{{ db.name }}'
+    state: present
+  become: true
+
+- name: Create the beaker database user
+  mysql_user:
+    name: '{{ db.user }}'
+    password: '{{ db.password }}'
+    priv: '{{ db.name }}.*:ALL'
+  become: true

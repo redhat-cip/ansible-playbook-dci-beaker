@@ -1,0 +1,55 @@
+---
+- name: Install packages
+  package:
+    name:
+      - beaker-server
+      - beaker-client
+  become: true
+  notify:
+    - restart mariadb
+    - restart httpd
+
+- name: Configure the database for beaker
+  ini_file:
+    path: /etc/beaker/server.cfg
+    section: global
+    option: sqlalchemy.dburi
+    value: '"mysql://{{ db.user }}:{{ db.password }}@localhost/{{ db.name }}?charset=utf8"'
+  become: true
+
+- name: Check if we need to upgrade/create user
+  command: beaker-init --check
+  register: beaker_init_result
+  ignore_errors: true
+  become: true
+  changed_when: beaker_init_result.rc != 0
+
+- name: Create initial admin user in beaker
+  command: >
+    beaker-init
+    --user {{ admin_login | quote }}
+    --password {{ admin_password | quote }}
+    --email {{ admin_email | quote}}
+    --fullname {{ admin_fullname | quote }}
+  when: beaker_init_result is failed
+  become: true
+
+- name: Create client.conf file for admin user
+  template:
+    src: templates/etc/beaker/client.conf.j2
+    dest: /etc/beaker/client.conf
+    mode: 0640
+  become: true
+
+- name: Disable SELinux because of Beaker
+  selinux:
+    state: permissive
+    policy: targeted
+  become: true
+
+- name: Enable beakerd
+  service:
+    name: beakerd
+    enabled: true
+    state: started
+  become: true

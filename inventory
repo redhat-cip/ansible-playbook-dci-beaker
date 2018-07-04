@@ -1,0 +1,1 @@
+beaker ansible_host=<hostname> ansible_user=<user>

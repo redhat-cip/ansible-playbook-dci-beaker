@@ -1,0 +1,103 @@
+---
+- name: Install labcontroller package & dependencies
+  package:
+    name:
+      - beaker-lab-controller
+      - dnsmasq
+      - conserver
+      - conserver-client
+  become: true
+  notify:
+    - restart httpd
+
+- name: Verify if the labcontroller exists
+  shell: 'bkr labcontroller-list | grep "^{{ lab.fqdn }}$"'
+  register: labcontrollers
+  changed_when: false
+  ignore_errors: true
+  become: true
+
+- name: Register the labcontroller
+  command: bkr labcontroller-create --fqdn {{ lab.fqdn }} --user host/labctrl --password labctrl --email {{ admin_email }}
+  when: "labcontrollers.rc != 0"
+  become: true
+
+- name: Create the labcontroller configuration file
+  template:
+    src: templates/etc/beaker/labcontroller.conf.j2
+    dest: /etc/beaker/labcontroller.conf
+    mode: 0640
+    owner: root
+    group: apache
+  notify: restart labcontroller services
+  become: true
+
+- name: Install dnsmasq configuration file
+  template:
+    src: templates/etc/dnsmasq.d/beaker.conf.j2
+    dest: /etc/dnsmasq.d/beaker.conf
+    mode: 0644
+    owner: root
+    group: root
+  become: true
+  notify: restart dnsmasq
+
+- name: Start dnsmasq
+  service:
+    name: dnsmasq
+    state: started
+    enabled: true
+  become: true
+
+- name: Start the labcontroller services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+  become: true
+  with_items:
+    - beaker-proxy
+    - beaker-watchdog
+    - beaker-provision
+
+- name: Enable DHCP/DNS/TFTP services in firewalld
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  when: ansible_facts.services.['firewalld.service'] == 'running'
+  become: true
+  tags: [ firewall ]
+  with_items:
+    - dhcp
+    - dns
+    - tftp
+
+- name: Enable port 8000 for the lab controller ping-back in firewalld
+  firewalld:
+    port: 8000/tcp
+    permanent: true
+    immediate: true
+    state: enabled
+  when: ansible_facts.services.['firewalld.service'] == 'running'
+  become: true
+  tags: [ firewall ]
+
+- name: Install ipmitool_lanplus powerscript
+  copy:
+    src: files/ipmitool_lanplus
+    dest: /etc/beaker/power-scripts/ipmitool_lanplus
+    mode: 0755
+  become: true
+
+- name: Make sure the ipmitool_lanplus power_type exists [copy hack script]
+  copy:
+    src: files/add_new_powertype.sh
+    dest: /root/add_new_powertype.sh
+    mode: 0700
+  become: true
+
+- name: Make sure the ipmitool_lanplus power_type exists [copy hack script]
+  command: /root/add_new_powertype.sh "{{ admin_login }}" "{{ admin_password }}" ipmitool_lanplus
+  become: true

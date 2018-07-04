@@ -1,0 +1,18 @@
+---
+- name: Enable httpd
+  service:
+    name: httpd
+    enabled: true
+    state: started
+  become: true
+
+- name: Enable http service in firewalld
+  firewalld:
+    service: http
+    permanent: true
+    immediate: true
+    state: enabled
+  when: ansible_facts.services.['firewalld.service'] == 'running'
+  become: true
+  tags: [ firewall ]
+
