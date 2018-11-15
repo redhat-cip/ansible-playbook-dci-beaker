@@ -6,7 +6,7 @@
   with_items:
     - https://beaker-project.org/tasks/beaker-distribution-install-1.12-2.noarch.rpm
     - https://beaker-project.org/tasks/beaker-distribution-inventory-1.2-4.noarch.rpm
-    - https://beaker-project.org/tasks/beaker-distribution-reservesys-3.4-8.noarch.rpm
+    - https://beaker-project.org/tasks/beaker-distribution-reservesys-3.4-9.noarch.rpm
     - https://beaker-project.org/tasks/beaker-distribution-updateDistro-1.2-1.noarch.rpm
   become: true
 
@@ -16,6 +16,6 @@
   with_items:
     - /tmp/beaker-distribution-install-1.12-2.noarch.rpm
     - /tmp/beaker-distribution-inventory-1.2-4.noarch.rpm
-    - /tmp/beaker-distribution-reservesys-3.4-8.noarch.rpm
+    - /tmp/beaker-distribution-reservesys-3.4-9.noarch.rpm
     - /tmp/beaker-distribution-updateDistro-1.2-1.noarch.rpm
   ignore_errors: true
