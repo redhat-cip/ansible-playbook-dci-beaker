@@ -33,6 +33,7 @@
     --fullname {{ admin_fullname | quote }}
   when: beaker_init_result is failed
   become: true
+  notify: restart beakerd
 
 - name: Create client.conf file for admin user
   template:
@@ -45,11 +46,4 @@
   selinux:
     state: permissive
     policy: targeted
-  become: true
-
-- name: Enable beakerd
-  service:
-    name: beakerd
-    enabled: true
-    state: started
   become: true

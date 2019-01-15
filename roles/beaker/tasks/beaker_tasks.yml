@@ -2,7 +2,7 @@
 - name: Get beaker tasks list
   uri:
     url: https://beaker-project.org/tasks/
-    return_content: yes
+    return_content: true
   register: beaker_tasks
 
 - name: Parse rpms list
