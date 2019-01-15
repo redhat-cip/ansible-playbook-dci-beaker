@@ -1,21 +1,27 @@
 ---
+- name: Get beaker tasks list
+  uri:
+    url: https://beaker-project.org/tasks/
+    return_content: yes
+  register: beaker_tasks
+
+- name: Parse rpms list
+  set_fact:
+    rpms: "{{ beaker_tasks.content.split('\n')|select('search', '<tr>')|map('regex_replace', '<tr><td class=\"n\"><a href=\"(.*.rpm)\">.*</td></tr>', '\\1')|list }}"
+
+- name: Create ansible tmp dir
+  tempfile:
+    state: directory
+  register: tmp_dir
+
 - name: Fetch Beaker default tasks
   get_url:
-    url: "{{ item }}"
-    dest: /tmp/
-  with_items:
-    - https://beaker-project.org/tasks/beaker-distribution-install-1.12-2.noarch.rpm
-    - https://beaker-project.org/tasks/beaker-distribution-inventory-1.2-4.noarch.rpm
-    - https://beaker-project.org/tasks/beaker-distribution-reservesys-3.4-9.noarch.rpm
-    - https://beaker-project.org/tasks/beaker-distribution-updateDistro-1.2-1.noarch.rpm
-  become: true
+    dest: '{{ tmp_dir.path }}'
+    url: 'https://beaker-project.org/tasks/{{ item }}'
+  with_items: '{{ rpms[1:] }}'
 
 - name: Upload Beaker default tasks
-  command: bkr task-add {{ item }}
+  command: bkr task-add {{ tmp_dir.path}}/{{ item }}
   become: true
-  with_items:
-    - /tmp/beaker-distribution-install-1.12-2.noarch.rpm
-    - /tmp/beaker-distribution-inventory-1.2-4.noarch.rpm
-    - /tmp/beaker-distribution-reservesys-3.4-9.noarch.rpm
-    - /tmp/beaker-distribution-updateDistro-1.2-1.noarch.rpm
+  with_items: '{{ rpms[1:] }}'
   ignore_errors: true
