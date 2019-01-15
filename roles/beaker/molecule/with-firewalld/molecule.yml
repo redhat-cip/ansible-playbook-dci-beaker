@@ -1,0 +1,33 @@
+---
+lint:
+  name: yamllint
+platforms:
+  - name: el7
+    image: centos/systemd:latest
+    command: /sbin/init
+    capabilities:
+      - SYS_ADMIN
+      - NET_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: with-firewalld
+  test_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
