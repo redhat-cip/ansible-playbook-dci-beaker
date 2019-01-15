@@ -1,0 +1,3 @@
+---
+- name: openstack.redhat-subscription
+  src: https://github.com/openstack/ansible-role-redhat-subscription
