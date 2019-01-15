@@ -2,21 +2,21 @@
 - name: restart mariadb
   service:
     name: mariadb
-    enabled: yes
+    enabled: true
     state: restarted
   become: true
 
 - name: restart httpd
   service:
     name: httpd
-    enabled: yes
+    enabled: true
     state: restarted
   become: true
 
 - name: restart labcontroller services
   service:
     name: "{{ item }}"
-    enabled: yes
+    enabled: true
     state: restarted
   become: true
   with_items:
@@ -27,6 +27,6 @@
 - name: restart dnsmasq
   service:
     name: dnsmasq
-    enabled: yes
+    enabled: true
     state: restarted
   become: true

@@ -1,0 +1,17 @@
+---
+- include_tasks: tasks/prerequisites.yml
+  tags: [ prereqs ]
+- include_tasks: tasks/database.yml
+  tags: [ db, beakerd ]
+- include_tasks: tasks/beaker_common.yml
+  tags: [ repos ]
+- include_tasks: tasks/beakerd.yml
+  tags: [ beakerd ]
+- include_tasks: tasks/httpd.yml
+  tags: [ beakerd, lab ]
+- include_tasks: tasks/beaker_lab.yml
+  tags: [ lab ]
+- include_tasks: tasks/beaker_tasks.yml
+  tags: [ tasks ]
+- include_tasks: tasks/beaker_systems.yml
+  tags: [ systems ]
