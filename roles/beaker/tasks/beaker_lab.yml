@@ -14,11 +14,11 @@
   shell: 'bkr labcontroller-list | grep "^{{ lab.fqdn }}$"'
   register: labcontrollers
   changed_when: false
-  ignore_errors: true
+  failed_when: false
   become: true
 
 - name: Register the labcontroller
-  command: bkr labcontroller-create --fqdn {{ lab.fqdn }} --user host/labctrl --password labctrl --email {{ admin_email }}
+  shell: bkr labcontroller-create --fqdn {{ lab.fqdn }} --user host/labctrl --password labctrl --email {{ admin_email }} > /root/bkr_labcontroler-create_{{ lab.fqdn }}
   when: "labcontrollers.rc != 0"
   become: true
 
@@ -60,13 +60,17 @@
     - beaker-watchdog
     - beaker-provision
 
+- name: Populate service facts
+  service_facts:
 - name: Enable DHCP/DNS/TFTP services in firewalld
   firewalld:
     service: "{{ item }}"
     permanent: true
     immediate: true
     state: enabled
-  when: ansible_facts.services.['firewalld.service'] == 'running'
+  when:
+    - "'firewalld.service' in ansible_facts.services"
+    - "ansible_facts.services['firewalld.service']['state'] == 'running'"
   become: true
   tags: [ firewall ]
   with_items:
@@ -80,7 +84,9 @@
     permanent: true
     immediate: true
     state: enabled
-  when: ansible_facts.services.['firewalld.service'] == 'running'
+  when:
+    - "'firewalld.service' in ansible_facts.services"
+    - "ansible_facts.services['firewalld.service']['state'] == 'running'"
   become: true
   tags: [ firewall ]
 
@@ -91,7 +97,7 @@
     mode: 0755
   become: true
 
-- name: Make sure the ipmitool_lanplus power_type exists [copy hack script]
+- name: Copy add_new_powertype.sh
   copy:
     src: files/add_new_powertype.sh
     dest: /root/add_new_powertype.sh
@@ -99,5 +105,7 @@
   become: true
 
 - name: Make sure the ipmitool_lanplus power_type exists [copy hack script]
-  command: /root/add_new_powertype.sh "{{ admin_login }}" "{{ admin_password }}" ipmitool_lanplus
+  shell: /root/add_new_powertype.sh "{{ admin_login }}" "{{ admin_password }}" ipmitool_lanplus 2>&1 > /root/add_new_powertype.log
+  args:
+    creates: /root/add_new_powertype.log
   become: true
