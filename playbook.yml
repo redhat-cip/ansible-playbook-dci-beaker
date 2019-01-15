@@ -1,21 +1,13 @@
 ---
 - hosts: beaker
-  handlers:
-  - import_tasks: handlers/handlers.yml
   tasks:
-  - import_tasks: tasks/prerequisites.yml
-    tags: [ prereqs ]
-  - import_tasks: tasks/database.yml
-    tags: [ db, beakerd ]
-  - import_tasks: tasks/beaker_common.yml
-    tags: [ repos ]
-  - import_tasks: tasks/beakerd.yml
-    tags: [ beakerd ]
-  - import_tasks: tasks/httpd.yml
-    tags: [ beakerd, lab ]
-  - import_tasks: tasks/beaker_lab.yml
-    tags: [ lab ]
-  - import_tasks: tasks/beaker_tasks.yml
-    tags: [ tasks ]
-  - import_tasks: tasks/beaker_systems.yml
-    tags: [ systems ]
+    - import_role:
+        name: openstack.redhat-subscription
+      vars:
+        rhsm_repos:
+          - rhel-7-server-rpms
+          - rhel-7-server-extras-rpms
+          - rhel-7-server-optional-rpms
+      when: ansible_distribution == 'RedHat'
+    - import_role:
+        name: beaker
