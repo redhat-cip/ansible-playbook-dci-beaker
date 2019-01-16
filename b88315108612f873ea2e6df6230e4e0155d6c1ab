@@ -1,0 +1,9 @@
+Code-Review+2: François Charlier <francois.charlier@redhat.com>
+Code-Review+2: Gonéri Le Bouder <goneri@lebouder.net>
+Workflow+1: Gonéri Le Bouder <goneri@lebouder.net>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Wed, 16 Jan 2019 20:59:35 +0000
+Reviewed-on: https://softwarefactory-project.io/r/14769
+Project: ansible-playbook-dci-beaker
+Branch: refs/heads/master
