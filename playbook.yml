@@ -1,6 +1,18 @@
 ---
 - hosts: beaker
   tasks:
+    - fail:
+      msg: |
+          Please rename {{ item }} to beaker_{{ item }} in group_vars/all.
+      when: "hostvars['beaker'][item] is defined"
+      with_items:
+        - admin_login
+        - admin_password
+        - admin_email
+        - admin_fullname
+        - lab
+        - db
+
     - import_role:
         name: openstack.redhat-subscription
       vars:
@@ -9,5 +21,6 @@
           - rhel-7-server-extras-rpms
           - rhel-7-server-optional-rpms
       when: ansible_distribution == 'RedHat'
+
     - import_role:
         name: beaker

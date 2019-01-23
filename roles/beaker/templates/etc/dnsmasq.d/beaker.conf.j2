@@ -1,6 +1,6 @@
-dhcp-range={{ lab.dhcp_start }},{{ lab.dhcp_end }},{{ lab.dhcp_netmask }}
+dhcp-range={{ beaker_lab.dhcp_start }},{{ beaker_lab.dhcp_end }},{{ beaker_lab.dhcp_netmask }}
 dhcp-ignore=tag:!known
-dhcp-option=option:router,{{ lab.router }}
+dhcp-option=option:router,{{ beaker_lab.router }}
 
 # Use this server as a time and name server for machines in the lab
 dhcp-option=option:dns-server,0.0.0.0
@@ -11,7 +11,7 @@ tftp-root=/var/lib/tftpboot
 dhcp-boot=pxelinux.0
 
 # Use a combination of /etc/ethers & /etc/hosts instead of this ?
-{% for host in lab.systems %}
+{% for host in beaker_lab.systems %}
 dhcp-host={{ host.mac_address }},{{ host.fqdn }},{{ host.ip_address }}
 {% endfor %}
 

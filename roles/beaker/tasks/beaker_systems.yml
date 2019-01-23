@@ -11,7 +11,7 @@
 - name: Create the systems
   command: >
     bkr system-create
-    --lab-controller={{ lab.fqdn }}
+    --lab-controller={{ beaker_lab.fqdn }}
     --arch={{ item.arch }}
     --power-type={{ item.power_type }}
     --power-address={{ item.power_address }}
@@ -22,7 +22,7 @@
     - systems.rc == 0
     - "item['fqdn'] not in systems.stdout_lines"
   become: true
-  loop: '{{ lab.systems }}'
+  loop: '{{ beaker_lab.systems }}'
   tags:
     - systems
 

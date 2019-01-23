@@ -29,7 +29,7 @@
   mysql_user:
     name: root
     host: '{{ item }}'
-    password: '{{ db.root_pass }}'
+    password: '{{ beaker_db.root_pass }}'
   with_items: ['localhost']
   become: true
 
@@ -42,18 +42,18 @@
     mode: 0600
   with_items:
     - { 'var': 'user', 'val': 'root' }
-    - { 'var': 'password', 'val': '{{ db.root_pass }}' }
+    - { 'var': 'password', 'val': '{{ beaker_db.root_pass }}' }
   become: true
 
 - name: Create the database
   mysql_db:
-    name: '{{ db.name }}'
+    name: '{{ beaker_db.name }}'
     state: present
   become: true
 
 - name: Create the beaker database user
   mysql_user:
-    name: '{{ db.user }}'
-    password: '{{ db.password }}'
-    priv: '{{ db.name }}.*:ALL'
+    name: '{{ beaker_db.user }}'
+    password: '{{ beaker_db.password }}'
+    priv: '{{ beaker_db.name }}.*:ALL'
   become: true
