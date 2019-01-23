@@ -11,14 +11,14 @@
     - restart httpd
 
 - name: Verify if the labcontroller exists
-  shell: 'bkr labcontroller-list | grep "^{{ lab.fqdn }}$"'
+  shell: 'bkr labcontroller-list | grep "^{{ beaker_lab.fqdn }}$"'
   register: labcontrollers
   changed_when: false
   failed_when: false
   become: true
 
 - name: Register the labcontroller
-  shell: bkr labcontroller-create --fqdn {{ lab.fqdn }} --user host/labctrl --password labctrl --email {{ admin_email }} > /root/bkr_labcontroler-create_{{ lab.fqdn }}
+  shell: bkr labcontroller-create --fqdn {{ beaker_lab.fqdn }} --user host/labctrl --password labctrl --email {{ beaker_admin_email }} > /root/bkr_labcontroler-create_{{ beaker_lab.fqdn }}
   when: "labcontrollers.rc != 0"
   become: true
 
@@ -105,7 +105,7 @@
   become: true
 
 - name: Make sure the ipmitool_lanplus power_type exists [copy hack script]
-  shell: /root/add_new_powertype.sh "{{ admin_login }}" "{{ admin_password }}" ipmitool_lanplus 2>&1 > /root/add_new_powertype.log
+  shell: /root/add_new_powertype.sh "{{ beaker_admin_login }}" "{{ beaker_admin_password }}" ipmitool_lanplus 2>&1 > /root/add_new_powertype.log
   args:
     creates: /root/add_new_powertype.log
   become: true
