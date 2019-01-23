@@ -14,7 +14,7 @@
     path: /etc/beaker/server.cfg
     section: global
     option: sqlalchemy.dburi
-    value: '"mysql://{{ db.user }}:{{ db.password }}@localhost/{{ db.name }}?charset=utf8"'
+    value: '"mysql://{{ beaker_db.user }}:{{ beaker_db.password }}@localhost/{{ beaker_db.name }}?charset=utf8"'
   become: true
 
 - name: Check if we need to upgrade/create user
@@ -27,10 +27,10 @@
 - name: Create initial admin user in beaker
   command: >
     beaker-init
-    --user {{ admin_login | quote }}
-    --password {{ admin_password | quote }}
-    --email {{ admin_email | quote}}
-    --fullname {{ admin_fullname | quote }}
+    --user {{ beaker_admin_login | quote }}
+    --password {{ beaker_admin_password | quote }}
+    --email {{ beaker_admin_email | quote}}
+    --fullname {{ beaker_admin_fullname | quote }}
   when: beaker_init_result is failed
   become: true
   notify: restart beakerd

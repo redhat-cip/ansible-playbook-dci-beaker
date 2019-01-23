@@ -1,18 +1,19 @@
 ---
-admin_login: admin
-admin_password: admin
-admin_email: "root@localhost.localdomain"
-admin_fullname: Admin Nimda
+beaker_admin_login: admin
+beaker_admin_password: admin
+beaker_admin_email: "root@localhost.localdomain"
+beaker_admin_fullname: Admin Nimda
 
-db:
+beaker_db:
   name: beaker
   user: beaker
   password: "{{ lookup('password', 'credentials/mysqlpassword/beaker length=15') }}"
   root_pass: "{{ lookup('password', 'credentials/mysqlpassword/root length=21') }}"
 
-lab:
+beaker_base_ip: "{{ ansible_default_ipv4.address }}"
+beaker_lab:
   fqdn: "{{ ansible_nodename }}"
-  listen_address: "{{ ansible_default_ipv4.address }}"
+  listen_address: "{{ beaker_base_ip }}"
   dhcp_start: 192.168.1.50
   dhcp_end: 192.168.1.60
   dhcp_netmask: 255.255.255.0
