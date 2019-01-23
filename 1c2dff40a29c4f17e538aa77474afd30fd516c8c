@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a8d9609_d62e7fd0",
+        "filename": "roles/beaker/molecule/default/Dockerfile.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "not required due to centos/systemd container image",
+      "range": {
+        "startLine": 9,
+        "startChar": 117,
+        "endLine": 9,
+        "endChar": 166
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f660daa2_e918ad04",
+        "filename": "roles/beaker/molecule/default/Dockerfile.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "not required due to centos/systemd container image",
+      "range": {
+        "startLine": 9,
+        "startChar": 53,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27625147_e35beb22",
+        "filename": "roles/beaker/molecule/default/Dockerfile.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "not required due to centos/systemd container image",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "86d28e77_2fd3b9d6",
+        "filename": "roles/beaker/molecule/default/molecule.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "already defined in the centos/systemd container image",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 40
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62f779c1_3f845ae1",
+        "filename": "roles/beaker/molecule/default/tests/test_default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "this comes with the default molecule config so it\u0027s not required for that role.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6d719f17_c36fe0cb",
+        "filename": "roles/beaker/molecule/default/tests/test_default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "is that required ? because run always returns rc, stdout and stderr",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 21
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14278214_bb1298fe",
+        "filename": "roles/beaker/molecule/with-firewalld/Dockerfile.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "see the other Dockerfile",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfe6489a_27d53e17",
+        "filename": "roles/beaker/molecule/with-firewalld/tests/test_default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "so we\u0027re not running all the other tests (from default) ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 0
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "819f5207_3a3a0b7b",
+        "filename": "roles/beaker/tasks/beaker_common.yml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-23T18:20:38Z",
+      "side": 1,
+      "message": "so we are using the RHEL repo on centos even if there\u0027s dedicated repo for that distro ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 14
+      },
+      "revId": "1c2dff40a29c4f17e538aa77474afd30fd516c8c",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
