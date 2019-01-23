@@ -1,8 +1,8 @@
 ---
-admin_login: admin
-admin_password: admin
-admin_email: "root@localhost.localdomain"
-admin_fullname: Admin Nimda
+beaker_admin_login: admin
+beaker_admin_password: admin
+beaker_admin_email: "root@localhost.localdomain"
+beaker_admin_fullname: Admin Nimda
 
 rhsm_username: "{{ lookup('env', 'RHSM_LOGIN') }}"
 rhsm_password:  "{{ lookup('env', 'RHSM_PASSWORD') }}"
