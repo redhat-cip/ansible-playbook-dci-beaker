@@ -1,0 +1,12 @@
+# Molecule managed
+
+{% if item.registry is defined %}
+FROM {{ item.registry.url }}/{{ item.image }}
+{% else %}
+FROM {{ item.image }}
+{% endif %}
+
+RUN yum install -y python sudo bash iproute libselinux-python selinux-policy firewalld && systemctl enable firewalld && yum clean all
+
+# NOTE(Gonéri) Ninja hack to prevent firewalld from loading extra kernel modules
+RUN sed -i 's,<module name="nf_conntrack_tftp"/>,,' /usr/lib/firewalld/services/tftp.xml
