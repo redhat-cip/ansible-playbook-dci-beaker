@@ -4,6 +4,10 @@ admin_password: admin
 admin_email: "root@localhost.localdomain"
 admin_fullname: Admin Nimda
 
+rhsm_username: "{{ lookup('env', 'RHSM_LOGIN') }}"
+rhsm_password:  "{{ lookup('env', 'RHSM_PASSWORD') }}"
+rhsm_autosubscribe: true
+
 #lab:
 #  fqdn: "{{ ansible_nodename }}"
 #  listen_address: "{{ ansible_default_ipv4.address }}"
