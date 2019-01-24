@@ -10,6 +10,10 @@ You can download the role from Github with the following command:
     git clone https://github.com/redhat-cip/ansible-playbook-dci-beaker/
     cd ansible-playbook-dci-beaker
 
+## Download the dependencies
+
+    ansible-galaxy install -r requirements.yml -p roles/
+
 ## Initial configuration
 
 Before applying the role, the following files need some configuration:

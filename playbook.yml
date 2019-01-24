@@ -2,4 +2,12 @@
 - hosts: beaker
   tasks:
     - import_role:
+        name: openstack.redhat-subscription
+      vars:
+        rhsm_repos:
+          - rhel-7-server-rpms
+          - rhel-7-server-extras-rpms
+          - rhel-7-server-optional-rpms
+      when: ansible_distribution == 'RedHat'
+    - import_role:
         name: beaker
