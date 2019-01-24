@@ -4,7 +4,7 @@
     name: beaker-server
     description: Beaker Server - RedHatEnterpriseLinux$releasever
     baseurl: https://beaker-project.org/yum/server/RedHatEnterpriseLinux$releasever/
-    gpgcheck: no
+    gpgcheck: false
     gpgkey: https://beaker-project.org/gpg/RPM-GPG-KEY-beaker-project
   become: true
 
@@ -13,7 +13,7 @@
     name: beaker-client
     description: Beaker Client - RedHatEnterpriseLinux$releasever
     baseurl: https://beaker-project.org/yum/client/RedHatEnterpriseLinux$releasever/
-    gpgcheck: no
+    gpgcheck: false
     gpgkey: https://beaker-project.org/gpg/RPM-GPG-KEY-beaker-project
   become: true
 
@@ -22,6 +22,6 @@
     name: beaker-harness
     description: Beaker Harness - RedHatEnterpriseLinux$releasever
     baseurl: https://beaker-project.org/yum/harness/RedHatEnterpriseLinux{{ ansible_distribution_major_version }}/
-    gpgcheck: no
+    gpgcheck: false
     gpgkey: https://beaker-project.org/gpg/RPM-GPG-KEY-beaker-project
   become: true
