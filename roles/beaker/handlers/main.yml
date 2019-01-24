@@ -5,6 +5,7 @@
     enabled: true
     state: restarted
   become: true
+  notify: restart beakerd
 
 - name: restart httpd
   service:
@@ -29,4 +30,11 @@
     name: dnsmasq
     enabled: true
     state: restarted
+  become: true
+
+- name: restart beakerd
+  service:
+    name: beakerd
+    enabled: true
+    state: started
   become: true
