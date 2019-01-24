@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60cec3b9_973f6b8c",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:52:40Z",
+      "side": 1,
+      "message": "py{2,3}-ansible{25,26,27}\n\nnot sure if it\u0027s worth it to still test 2.5\n\nAlso it\u0027s maybe better to set the python minor release because ansible can\u0027t work with all python 3 releases.\n\npy{27,36}-ansible{25,26,27}",
+      "range": {
+        "startLine": 4,
+        "startChar": 3,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f291d30b_8742a9c4",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:52:40Z",
+      "side": 1,
+      "message": "ansible\u003d\u003e2.5,\u003c2.6",
+      "range": {
+        "startLine": 13,
+        "startChar": 15,
+        "endLine": 13,
+        "endChar": 31
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdfd8e7b_315f872e",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:52:40Z",
+      "side": 1,
+      "message": "ansible\u003d\u003e2.6,\u003c2.7",
+      "range": {
+        "startLine": 14,
+        "startChar": 15,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76af9a43_db37ba7d",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:52:40Z",
+      "side": 1,
+      "message": "ansible\u003d\u003e2.7,\u003c2.8",
+      "range": {
+        "startLine": 15,
+        "startChar": 15,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
