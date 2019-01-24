@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd17da17_828c1d3c",
+        "filename": "group_vars/all",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:37:50Z",
+      "side": 1,
+      "message": "it\u0027s alreayd in the default role value right ?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 27
+      },
+      "revId": "3892e6c3f744a29187aa4f910d34f20b6f7cd48a",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af4f7a20_0fa363a2",
+        "filename": "group_vars/all",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T19:37:50Z",
+      "side": 1,
+      "message": "we could probably delete the commented lines?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "3892e6c3f744a29187aa4f910d34f20b6f7cd48a",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
