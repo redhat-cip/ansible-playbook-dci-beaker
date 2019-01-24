@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "415096ab_014e146b",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-24T21:15:41Z",
+      "side": 1,
+      "message": "because it\u0027s ansible\u003e\u003d2.5,\u003c2.6",
+      "parentUuid": "5e47ba59_595f1e35",
+      "range": {
+        "startLine": 13,
+        "startChar": 15,
+        "endLine": 13,
+        "endChar": 31
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cdfd8e7b_315f872e",
         "filename": "roles/beaker/tox.ini",
         "patchSetId": 1
