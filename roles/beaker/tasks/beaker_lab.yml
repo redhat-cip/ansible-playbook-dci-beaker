@@ -60,13 +60,17 @@
     - beaker-watchdog
     - beaker-provision
 
+- name: Populate service facts
+  service_facts:
 - name: Enable DHCP/DNS/TFTP services in firewalld
   firewalld:
     service: "{{ item }}"
     permanent: true
     immediate: true
     state: enabled
-  when: ansible_facts.services.['firewalld.service'] == 'running'
+  when:
+    - "'firewalld.service' in ansible_facts.services"
+    - "ansible_facts.services['firewalld.service']['state'] == 'running'"
   become: true
   tags: [ firewall ]
   with_items:
@@ -80,7 +84,9 @@
     permanent: true
     immediate: true
     state: enabled
-  when: ansible_facts.services.['firewalld.service'] == 'running'
+  when:
+    - "'firewalld.service' in ansible_facts.services"
+    - "ansible_facts.services['firewalld.service']['state'] == 'running'"
   become: true
   tags: [ firewall ]
 

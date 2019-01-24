@@ -15,6 +15,3 @@
   become: true
   tags:
     - packages
-
-- name: Populate service facts
-  service_facts:
