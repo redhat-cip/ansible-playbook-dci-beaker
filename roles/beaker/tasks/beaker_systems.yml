@@ -18,7 +18,9 @@
     --power-user={{ item.power_user }}
     --power-password={{ item.power_password }}
     {{ item['fqdn'] }}
-  when: "item['fqdn'] not in systems.stdout_lines"
+  when:
+    - systems.rc == 0
+    - "item['fqdn'] not in systems.stdout_lines"
   become: true
   loop: '{{ lab.systems }}'
   tags:
