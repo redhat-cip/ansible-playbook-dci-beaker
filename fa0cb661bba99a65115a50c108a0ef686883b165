@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5e47ba59_595f1e35",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-24T20:39:39Z",
+      "side": 1,
+      "message": "The syntax does not work:\n\nInvalid requirement: \u0027ansible\u003d\u003e2.5,\u003c2.6\u0027",
+      "parentUuid": "8433c5c6_314400ca",
+      "range": {
+        "startLine": 13,
+        "startChar": 15,
+        "endLine": 13,
+        "endChar": 31
+      },
+      "revId": "fa0cb661bba99a65115a50c108a0ef686883b165",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cdfd8e7b_315f872e",
         "filename": "roles/beaker/tox.ini",
         "patchSetId": 1
