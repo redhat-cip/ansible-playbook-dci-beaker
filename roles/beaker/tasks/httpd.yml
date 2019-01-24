@@ -15,4 +15,3 @@
   when: ansible_facts.services.['firewalld.service'] == 'running'
   become: true
   tags: [ firewall ]
-
