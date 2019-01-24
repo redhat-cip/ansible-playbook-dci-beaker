@@ -4,7 +4,7 @@
   register: systems
   changed_when: false
   become: true
-  ignore_errors: true
+  failed_when: false
   tags:
     - systems
 
