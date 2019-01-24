@@ -22,6 +22,30 @@
       "revId": "d98678e2adaa9fc1c560d8a460b8dbd339887f35",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e836bbb_d54f9df2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-24T19:49:06Z",
+      "side": 1,
+      "message": "Yup, I just push an update of the commit message.",
+      "parentUuid": "5e45c6d7_e12cc35d",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 60
+      },
+      "revId": "d98678e2adaa9fc1c560d8a460b8dbd339887f35",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
