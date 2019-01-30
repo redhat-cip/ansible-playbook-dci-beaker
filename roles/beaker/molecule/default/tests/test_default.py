@@ -28,13 +28,15 @@ def test_httpd_running_and_enabled(host):
 
 
 def test_beaker_init(host):
-    assert host.run('beaker-init --check').rc == 0
+    with host.sudo():
+        assert host.run('beaker-init --check').rc == 0
 
 
 def test_labcontrol_is_populated(host):
-    ret = host.run('bkr labcontroller-list')
-    assert ret.rc == 0
-    assert ret.stdout
+    with host.sudo():
+        ret = host.run('bkr labcontroller-list')
+        assert ret.rc == 0
+        assert ret.stdout
 
 
 def test_beaker_tasks_list(host):
@@ -55,9 +57,10 @@ def test_beaker_tasks_list(host):
         '/distribution/virt/stop',
         '/kernel/distribution/ltp-nfs/ltp',
     }
-    bkr_task_list_ret = host.run('bkr task-list')
-    tasks_found = set(bkr_task_list_ret.stdout.split('\n'))
-    assert tasks_found == tasks_expected
+    with host.sudo():
+        bkr_task_list_ret = host.run('bkr task-list')
+        tasks_found = set(bkr_task_list_ret.stdout.split('\n'))
+        assert tasks_found == tasks_expected
 
 
 def test_httpd_bkr(host):

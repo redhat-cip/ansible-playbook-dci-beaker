@@ -10,3 +10,7 @@ RUN yum install -y python sudo bash iproute libselinux-python selinux-policy fir
 
 # NOTE(Gonéri) Ninja hack to prevent firewalld from loading extra kernel modules
 RUN sed -i 's,<module name="nf_conntrack_tftp"/>,,' /usr/lib/firewalld/services/tftp.xml && rm -f /sbin/ebtables*
+
+RUN adduser centos && \
+    echo 'centos ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/90-centos && \
+    chmod 440 /etc/sudoers.d/90-centos
