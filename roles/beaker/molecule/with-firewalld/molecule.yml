@@ -10,6 +10,8 @@ platforms:
       - NET_ADMIN
 provisioner:
   name: ansible
+  connection_options:
+    ansible_user: centos
   lint:
     name: ansible-lint
 scenario:
