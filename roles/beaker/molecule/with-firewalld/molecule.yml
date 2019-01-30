@@ -2,7 +2,7 @@
 lint:
   name: yamllint
 platforms:
-  - name: el7
+  - name: el7-$TOX_ENVNAME
     image: centos/systemd:latest
     command: /sbin/init
     capabilities:
