@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "00160ebb_09243261",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-31T14:58:42Z",
+      "side": 1,
+      "message": "Well, it still works fine with older tox version as soon as we don\u0027t use --parallel X. So, I would prefer to stay like that.",
+      "parentUuid": "b65c56f8_c207fc76",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "4dcc76f5d9f636d3a37ff05d704e46693e2978fd",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35202279_0a031fe7",
         "filename": "roles/beaker/tox.ini",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-31T14:38:02Z",
       "side": 1,
       "message": "it\u0027s supposed to be already install via molecule, isn\u0027t it ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "4dcc76f5d9f636d3a37ff05d704e46693e2978fd",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41029f48_2b1dd9b5",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-31T14:58:42Z",
+      "side": 1,
+      "message": "Rahh, I forgot this one. Yes, you\u0027re right.",
+      "parentUuid": "35202279_0a031fe7",
       "range": {
         "startLine": 10,
         "startChar": 4,
