@@ -2,7 +2,7 @@
 - hosts: beaker
   tasks:
     - fail:
-      msg: |
+        msg: |
           Please rename {{ item }} to beaker_{{ item }} in group_vars/all.
       when: "hostvars['beaker'][item] is defined"
       with_items:
