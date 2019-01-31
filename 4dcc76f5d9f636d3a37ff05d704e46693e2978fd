@@ -93,6 +93,30 @@
       "revId": "4dcc76f5d9f636d3a37ff05d704e46693e2978fd",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0f8903b_1fc59e21",
+        "filename": "roles/beaker/tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-31T15:21:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41029f48_2b1dd9b5",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "4dcc76f5d9f636d3a37ff05d704e46693e2978fd",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
