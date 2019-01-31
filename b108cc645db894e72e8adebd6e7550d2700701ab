@@ -22,6 +22,30 @@
       "revId": "b108cc645db894e72e8adebd6e7550d2700701ab",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73212845_b1b90690",
+        "filename": "roles/beaker/molecule/default/molecule.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-01-31T15:41:49Z",
+      "side": 1,
+      "message": "I tried something like that yesterday, it was failing because of an unrelated reason:\n\npy{27,37}-ansible{25,26,27}-{with-systemd,without-systemd}\n\n\nWe can probably had {el7,el8} in the future to deal with the different OSes.",
+      "parentUuid": "e33221dd_58cf6a63",
+      "range": {
+        "startLine": 5,
+        "startChar": 10,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "b108cc645db894e72e8adebd6e7550d2700701ab",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
