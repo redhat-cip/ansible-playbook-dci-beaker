@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8873a95_805ea0c6",
+        "filename": "roles/beaker/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-01-31T14:32:45Z",
+      "side": 1,
+      "message": "weird I didn\u0027t have this issue when running mariadb in a container on centos 7",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "3850d60e1637839f09d90468658f796aff730b27",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
