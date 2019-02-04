@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "10213439_4c425caf",
+        "filename": "playbook.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-02-04T15:25:20Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "31cb575ffeb15c9f5ffe5f413d16bc30fca54009",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed55cf7_9eaccfd8",
+        "filename": "requirements.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-02-04T15:25:20Z",
+      "side": 1,
+      "message": "could you remove the ansible-role prefix like we did for redhat subscription ?",
+      "range": {
+        "startLine": 4,
+        "startChar": 19,
+        "endLine": 4,
+        "endChar": 38
+      },
+      "revId": "31cb575ffeb15c9f5ffe5f413d16bc30fca54009",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
