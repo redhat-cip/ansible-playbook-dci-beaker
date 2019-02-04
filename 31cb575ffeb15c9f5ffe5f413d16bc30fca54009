@@ -45,6 +45,30 @@
       "revId": "31cb575ffeb15c9f5ffe5f413d16bc30fca54009",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ca4d9dd_87c8f7ab",
+        "filename": "requirements.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2019-02-04T18:50:57Z",
+      "side": 1,
+      "message": "Yes, I\u0027ve this power!",
+      "parentUuid": "8ed55cf7_9eaccfd8",
+      "range": {
+        "startLine": 4,
+        "startChar": 19,
+        "endLine": 4,
+        "endChar": 38
+      },
+      "revId": "31cb575ffeb15c9f5ffe5f413d16bc30fca54009",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
