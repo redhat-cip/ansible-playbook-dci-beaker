@@ -21,6 +21,7 @@
           - rhel-7-server-extras-rpms
           - rhel-7-server-optional-rpms
       when: ansible_distribution == 'RedHat'
+      become: True
 
     - import_role:
         name: redhat-cip.ansible-role-beaker
