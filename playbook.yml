@@ -4,7 +4,7 @@
     - fail:
         msg: |
           Please rename {{ item }} to beaker_{{ item }} in group_vars/all.
-      when: "hostvars['beaker'][item] is defined"
+      when: "{{ item }} is defined"
       with_items:
         - admin_login
         - admin_password
