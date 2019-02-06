@@ -23,6 +23,7 @@
       when:
         - ansible_distribution == 'RedHat'
         - role_redhat_subscription|bool
+      become: true
 
     - import_role:
         name: redhat-cip.beaker
