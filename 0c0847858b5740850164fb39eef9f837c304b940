@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84ea630c_c5265132",
+        "filename": "playbook.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2019-02-11T16:51:38Z",
+      "side": 1,
+      "message": "could you replace the value by true ?",
+      "range": {
+        "startLine": 24,
+        "startChar": 14,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "0c0847858b5740850164fb39eef9f837c304b940",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
