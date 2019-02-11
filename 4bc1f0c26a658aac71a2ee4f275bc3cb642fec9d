@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d1929a76_d3fd07db",
+        "filename": "playbook.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 166
+      },
+      "writtenOn": "2019-02-11T22:16:31Z",
+      "side": 1,
+      "message": "+1 for casting value to boolean as it can be given through user output.",
+      "revId": "4bc1f0c26a658aac71a2ee4f275bc3cb642fec9d",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
