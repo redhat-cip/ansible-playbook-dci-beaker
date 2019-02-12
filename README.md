@@ -38,3 +38,12 @@ Call Ansible with the following command:
 ## Post-Deployment
 
 After running the playbook the first time, the credentials for services on the beaker server will be stored in the `credentials/` folder, unless the variables ared hardcoded in `group_vars/all`
+
+## Note about Virtual machines
+
+Virtual machines can use the "virsh" power type. As the virtualization support in Beaker is based on libvirt tools, you might need to install additional packages (like libvirt-client).
+For more information, please refer to Beaker Project official [documentation](https://beaker-project.org/docs/).
+
+It is also possible to configure a virtual BMC to manage virtual machines using the IPMI protocol.
+For more information, please refer to Virtual BMC official [documentation](https://docs.openstack.org/tripleo-docs/latest/install/environments/virtualbmc.html).
+
