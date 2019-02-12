@@ -3,6 +3,8 @@
 This is a playbook to install an all-in-one beaker server & lab controller.
 It has been designed to be used with [Distributed-CI](https://doc.distributed-ci.io/) but it can also be used independently of it.
 
+Virtual machines can use the virsh power type or standard IPMI with [Virtual BMC](https://docs.openstack.org/tripleo-docs/latest/install/environments/virtualbmc.html) in OpenStack.
+
 ## Download
 
 You can download the role from Github with the following command:
