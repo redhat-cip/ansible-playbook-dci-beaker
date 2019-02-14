@@ -1,0 +1,8 @@
+Code-Review+2: Dimitri Savineau <dsavinea@redhat.com>
+Workflow+1: Gonéri Le Bouder <goneri@lebouder.net>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Thu, 14 Feb 2019 16:57:40 +0000
+Reviewed-on: https://softwarefactory-project.io/r/14962
+Project: ansible-playbook-dci-beaker
+Branch: refs/heads/master
