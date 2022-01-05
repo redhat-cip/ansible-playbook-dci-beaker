@@ -19,9 +19,6 @@ You can download the role from Github with the following command:
 Before applying the role, the following files need some configuration:
 
 - `inventory`: adjust the hostname and user of the machine to use as a beaker server
-- `group_vars/all`: adjust the values for admin user and lab setup (DHCP range, systems access)
-
-You can skip Redhat subscription role by setting `role_redhat_subscription`  to false.
 
 ## Deployment
 
